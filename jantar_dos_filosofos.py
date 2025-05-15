@@ -6,8 +6,8 @@ from random import randint
 
 # Configurações
 NUM_FILOSOFOS = 5
-TEMPO_PENSANDO = (1, 3)  # Range de tempo pensando (min, max) em segundos
-TEMPO_COMENDO = (1, 3)   # Range de tempo comendo (min, max) em segundos
+TEMPO_PENSANDO = (1, 3) 
+TEMPO_COMENDO = (1, 3)   
 
 class Estado:
     PENSANDO = "pensando"
@@ -26,7 +26,7 @@ class Filosofo(threading.Thread):
         self.executando = True
 
     def pegar_garfos(self):
-        # Previne deadlock fazendo filósofos pares e ímpares pegarem garfos em ordem diferente
+        # para previnir o deadlock eu pensei em fazer filosofos pares e impares pegar os garfos em ordem doferentes
         if self.id % 2 == 0:
             first, second = self.garfo_esquerda, self.garfo_direita
         else:
